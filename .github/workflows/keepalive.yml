@@ -1,0 +1,27 @@
+## https://github.com/marketplace/actions/keepalive-workflow
+## https://github.com/gautamkrishnar/keepalive-workflow
+name: Keepalive Workflow
+
+on:
+  # schedule:
+  #   - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Run integration tests
+    steps:
+      - uses: actions/checkout@v5
+      # … whatever other steps you need to run your tests
+
+  workflow-keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1
