@@ -15,7 +15,7 @@ on:
 
 env:
   ## github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: qobuz-dl
 
 jobs:
   ## define job to build and publish docker image
